@@ -70,7 +70,7 @@ The compiler makes use of loop unrolling in optimisation level 2. A space-time t
 
 ## Part 4
 
-![](images/stackframe_arm.png)
+![](images/stackframe.png)
 
 Comments have been written on the arm file.
 
