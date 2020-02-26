@@ -70,9 +70,13 @@ The compiler makes use of loop unrolling in optimisation level 2. A space-time t
 
 ## Part 4
 
+![](images/stackframe_arm.png)
+
 Comments have been written on the arm file.
 
-To refer to 64 bits of register `x0` would be used. To refer to 32 bits of register `w0` would be used.
+As can be seen the order of differs slightly as the free space and location of argument b have been inverted.
+
+Arm can use both little endian and big endian. `x86` supports only little endian.
 
 | Register  | purpose                                                      |
 | --------- | ------------------------------------------------------------ |
