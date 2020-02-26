@@ -60,6 +60,14 @@ The compiler makes use of loop unrolling in optimisation level 2. A space-time t
 * Code is less readible
 * If an unrolled loop contains branches it may be even slower than recursion.
 
+
+
+| addressing modes         | meaning                                                      |
+| ------------------------ | ------------------------------------------------------------ |
+| Register addressing      | the register contains the operand                            |
+| Immediate Addressing     | one of the operands is a signed constant                     |
+| Direct Memory Addressing | The offset value is specified directly. Usually in variable name. |
+
 ## Part 4
 
 Comments have been written on the arm file.
@@ -94,11 +102,21 @@ assume `x0 = 1`, `x1 = 2`, `x2 = 3`. assume `x4` stores an address.
 
 | Addressing Mode                               | how it works                                                 |
 | --------------------------------------------- | ------------------------------------------------------------ |
-| Register Indirect                             | The location of an operand is held in a register             |
-| Post-Index (Register indirect post-increment) | Accesses the operand at the location pointed by the base register then increments the base register. |
-| Pre-index (register Indirect post-increment)  | A  pointer register is used to hold the base address. An offset is added to achieve effective address. |
+| Register Direct                               | Operand is stored in register. `mov x0, x1`                  |
+| Register Indirect                             | The location of an operand is held in a register. `mov x0, [x1]` |
+| Post-Index (Register indirect post-increment) | Accesses the operand at the location pointed by the base register then increments the base register. `ldr x0, [x1, #4]` |
+| Pre-index (register Indirect post-increment)  | A  pointer register is used to hold the base address. An offset is added to achieve effective address. `ldr x0, [x1], #4` |
 
 
 
 ## References
 
+1. https://azeria-labs.com/assembly-basics-cheatsheet/ used for understanding assembly commands purpose in Part 4
+
+2. https://infocenter.arm.com/ used for understanding purpose of assembly commands and purpose of registers in registers and the different addressing modes.
+3. https://courses.cs.washington.edu/courses/cse469/18wi/Materials/arm64.pdf used for understanding assembly in arm for part 4.
+4. https://www.geeksforgeeks.org/loop-unrolling/ used for understanding loop unrolling and the advantages and disadvantages of loop unrolling.
+
+5. https://www.tutorialspoint.com/assembly_programming/assembly_addressing_modes.htm used for understanding addressing modes of x86.
+
+6. http://www.cs.uregina.ca/Links/class-info/301/ARM-addressing/lecture.html understanding addressing modes of arm.
