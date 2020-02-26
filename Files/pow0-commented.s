@@ -8,7 +8,7 @@ power:
 	pushq	%rbp # pushes the current value of base pointer to stack.
 	.cfi_def_cfa_offset 16
 	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp # changes the base pointer to be the stack pointer - setting up new stack frame.
+	movq	%rsp, %rbp # changes the address in base pointer to be address in stack pointer- setting up new stack frame.
 	.cfi_def_cfa_register %rbp
 	subq	$32, %rsp # creates 32 bytes of space for stack frame.
 	movq	%rdi, -16(%rbp) # moves the value of the long a to the stack frame - giving 8 bytes of space

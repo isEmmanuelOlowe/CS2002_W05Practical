@@ -1,0 +1,12 @@
+make
+echo "Running: ./main"
+echo
+./main
+echo
+echo "Running: ./main-iter1"
+echo
+./main-iter1
+echo
+echo "Running: ./main-iter2"
+echo
+./main-iter2
